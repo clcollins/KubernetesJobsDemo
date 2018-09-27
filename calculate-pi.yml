@@ -1,0 +1,15 @@
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: calculate-pi
+spec:
+  completions: 5
+  parallelism: 5
+  backoffLimit: 5
+  activeDeadlineSeconds: 3600
+  template:
+    spec:
+      containers:
+      - name: pi-thon
+        image: clcollins/pithon:1.1
+        command: [ '/job.py' ]

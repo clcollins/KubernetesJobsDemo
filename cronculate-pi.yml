@@ -1,0 +1,17 @@
+kind: CronJob
+apiVersion: batch/v1beta1
+metadata:
+  name: cronculate-pi
+  labels:
+    name: cronculate-pi
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: pi-thon
+            image: clcollins/pithon:1.1
+            command: [ '/job.py' ]
+          restartPolicy: Never
