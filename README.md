@@ -110,7 +110,7 @@ spec:
 
 Parallel jobs can be run with a fixed number of completions, ie:
 
-    Do this job 1000 times, and then stop
+    Do this job 1000 times, and then stop.
 
 For example:
 
@@ -138,7 +138,10 @@ In this example, ten "calculate-pi" pods will be run at a time, until there have
 
 **Parallel with a work queue**
 
-An alternative to running parallel pods to a specific number of completions is parallel jobs with a work queue.  By leaving `.spec.completions` unset, the pods will run until they consider their work done, either by coordinating among themselves or working with an external service.
+An alternative to running parallel pods to a specific number of completions is parallel jobs with a work queue.  By leaving `.spec.completions` unset, the pods will run until they consider their work done, either by coordinating among themselves or working with an external service.  Eg:
+
+    Here's a bunch of work.  Coordinate among yourselves to get it done.
+
 
 Borrowing directly from the Kubernetes docs:
 
